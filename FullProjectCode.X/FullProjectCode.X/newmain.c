@@ -16,7 +16,7 @@
 #include <xc.h>
 #include <stdio.h>
 #include <string.h>
-
+////////////////////////////(khaled ghazzal) ///////////////////////////////
 #define _XTAL_FREQ 20000000
 #define PRESCALAR 16
 #define ADC_PIN 0
@@ -30,7 +30,7 @@ int counter;
 
 void __init_adc() {
     /*
-     * ADCON0 Register
+     * ADCON0 Register()
      * +---------------------------------------------------------------+
      * |   7   |   6   |   5   |   4   |   3   |   2   |   1   |   0   |
      * +---------------------------------------------------------------+
@@ -68,7 +68,7 @@ int __adc_read(int adc_channel) {
     return adc_value;
 }
 
-///////////////////////////// PWM Configuration ////////////////////////////////
+///////////////////////////// PWM Configuration(İbrahim Davutoğlu) ////////////////////////////////
 
 void __set_pwm_freq(int f) {
     PWM_FREQ = f;
@@ -119,7 +119,7 @@ void __init_timer__() {
     TMR1CS = 0; // select internal clock
     TMR1ON = 1; // enable timer1 
 }
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////(mohamed elnour)///////////////////////////////////////////////
 #define rs RD2
 #define en RD3
 
@@ -248,7 +248,7 @@ unsigned char key()
     if( no_push == 0 ) return 255 ;
     return (keypad[rowloc][colloc]);
 }
-
+//////////////////////////////////(İbrahim Davutoğlu)/////////////////////////////////////////////
 void show_num(int number){
     if( number >= 1000 ){
         dat( ( number/1000 + '0' ) );
@@ -388,7 +388,7 @@ void __interrupt() isr(void) {
         }
     }
 }
-
+/////////////////////////////////(khaled ghazzal)//////////////////////////////////////////////
 #define lin1()  (cmd(0x80))
 #define lin2()  (cmd(0xC0))
 
