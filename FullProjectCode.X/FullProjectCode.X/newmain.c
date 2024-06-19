@@ -1,8 +1,3 @@
-/* 
- * File:   newmain.c
- * Author: Abo ALaa
- * Created on June 12, 2024
- */
 
 #pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled)
@@ -399,22 +394,12 @@ int chossenIndex = -1 ;
 
 void main()
 {
-    TRISD=0;
+  TRISD=0;
     lcd_init();
     keyinit();
     cmd(0x80);
-    show("   Welcome TO   ");
-    __delay_ms(500);
-    cmd(0x01);
-    cmd(0x80);
-    show("   Heart Rate   ");
-    cmd(0xC0);
-    show("     Project    ");
-    __delay_ms(500);
-    cmd(0x01);
-    cmd(0x80);
-    show("Using PIC16F877A");
-    __delay_ms(500);
+    show("   Welcome!   ");
+    __delay_ms(1000);
     cmd(0x01);
     cmd(0x80);
     show("Press any key ....");
